@@ -12,14 +12,14 @@ function pad(str, length) {
 }
 
 vows.describe('Date Format').addBatch({
-    'can return month abbreviations as object method': {
+    'can return month abbreviations as static method': {
         topic: function () { return new Date(123456789) },
         'returns the correct abbreviated month': function (date) {
             assert.equal(date.getMonthAbbr(), 'Jan');
         }
     },
     
-    'can return month as object method': {
+    'can return month as static method': {
         topic: function () { return new Date(123456789) },
         'returns the correct month': function (date) {
             assert.equal(date.getMonthAbbr(), 'Jan');
