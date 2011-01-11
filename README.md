@@ -20,4 +20,19 @@ When using from Node:
     
     var clf = date.toCLString(); // 09/Jan/2011:09:57:017 -0800
     
+    var today = Date.today(); // Sun Jan 09 2011 00:00:00 GMT-0800 (PST)
 
+    today.getUTCOffset(); // -0800
+    
+    Date.validateYear(-1); // false
+    
+    Date.validateMonth(13); // false
+    
+    Date.validateHour(12); // true
+    
+    Date.validateMinute(62); // false
+    
+    Date.validateSecond(12); // true
+    
+    Date.validateMillisecond(1000); // false
+    
