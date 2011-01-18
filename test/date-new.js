@@ -31,5 +31,39 @@ vows.describe('Date New').addBatch({
             
             assert.equal(date.valueOf(), compare.valueOf());
         }
+    },
+    
+    'today() works': {
+        topic: function() {
+            return Date.today()
+        },
+        'returns the correct value': function(date) {
+            var compare = new Date().clearTime();
+            assert.equal(date.valueOf(), compare.valueOf());
+        }
+    },
+
+    'yesterday() works': {
+        topic: function() {
+            return Date.yesterday()
+        },
+        'returns the correct value': function(date) {
+            console.log("date = " + date);
+            var compare = new Date().clearTime();
+            compare.setSeconds(compare.getSeconds() - 86400);
+            assert.equal(date.valueOf(), compare.valueOf());
+        }
+    },
+
+    'tomorrow() works': {
+        topic: function() {
+            return Date.tomorrow()
+        },
+        'returns the correct value': function(date) {
+            var compare = new Date().clearTime();
+            compare.setSeconds(compare.getSeconds() + 86400);
+            assert.equal(date.valueOf(), compare.valueOf());
+        }
     }
+    
 }).run();
