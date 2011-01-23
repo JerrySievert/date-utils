@@ -416,7 +416,57 @@ vows.describe('Date Validate').addBatch({
         '0 for today': function (topic) {
             assert.equal(topic.compareTo(Date.today()), 0);
         }
-    }
+    },
     
+
+    'equals instance works': {
+        topic: function () { return Date.today() },
+        'true for equal': function (topic) {
+            assert.equal(topic.equals(Date.today()), true);
+        },
+        'false for not equal': function (topic) {
+            assert.equal(topic.equals(Date.tomorrow()), false);
+        }
+    },
+
+    'isBefore works': {
+        topic: function () { return Date.today() },
+        'true for before': function (topic) {
+            assert.equal(topic.isBefore(Date.tomorrow()), true);
+        },
+        'false for after': function (topic) {
+            assert.equal(topic.isBefore(Date.yesterday()), false);
+        }
+    },
+
+    'isAfter works': {
+        topic: function () { return Date.today() },
+        'false for before': function (topic) {
+            assert.equal(topic.isAfter(Date.tomorrow()), false);
+        },
+        'true for after': function (topic) {
+            assert.equal(topic.isAfter(Date.yesterday()), true);
+        }
+    },
+    
+    'getDaysBetween works': {
+        topic: function () { return Date.today() },
+        '1 for tomorrow': function (topic) {
+            assert.equal(topic.getDaysBetween(Date.tomorrow()), 1);
+        },
+        '-1 for yesterday': function (topic) {
+            assert.equal(topic.getDaysBetween(Date.yesterday()), -1);
+        },
+        '0 for today': function (topic) {
+            assert.equal(topic.getDaysBetween(Date.today()), 0);
+        }
+    },
+    
+    'getOrdinalNumber works': {
+        'returns correct day': function () {
+            var date = new Date(2011, 1, 0);
+            assert.equal(date.getOrdinalNumber(), 32);
+        }
+    }
     
 }).run();
