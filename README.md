@@ -6,6 +6,9 @@
 - Useable in Node.js
 - Useable in the browser
 
+## Installing
+    npm install node-date-utils
+
 ## Synopsis
 
 When using from Node:
