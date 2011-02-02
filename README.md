@@ -7,7 +7,7 @@
 - Useable in the browser
 
 ## Installing
-    npm install node-date-utils
+    npm install date-utils
 
 ## Synopsis
 
