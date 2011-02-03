@@ -467,6 +467,48 @@ vows.describe('Date Validate').addBatch({
             var date = new Date(2011, 1, 0);
             assert.equal(date.getOrdinalNumber(), 32);
         }
+    },
+
+    'getDaysInMonth works': {
+        'january': function (topic) {
+            assert.equal(Date.getDaysInMonth(2011, 0), 31);
+        },
+        'february': function (topic) {
+            assert.equal(Date.getDaysInMonth(2011, 1), 28);
+        },
+        'february leap year': function (topic) {
+            assert.equal(Date.getDaysInMonth(2008, 1), 29);
+        },
+        'march': function (topic) {
+            assert.equal(Date.getDaysInMonth(2011, 2), 31);
+        },
+        'april': function (topic) {
+            assert.equal(Date.getDaysInMonth(2011, 3), 30);
+        },
+        'may': function (topic) {
+            assert.equal(Date.getDaysInMonth(2011, 4), 31);
+        },
+        'june': function (topic) {
+            assert.equal(Date.getDaysInMonth(2011, 5), 30);
+        },
+        'july': function (topic) {
+            assert.equal(Date.getDaysInMonth(2011, 6), 31);
+        },
+        'august': function (topic) {
+            assert.equal(Date.getDaysInMonth(2011, 7), 31);
+        },
+        'september': function (topic) {
+            assert.equal(Date.getDaysInMonth(2011, 8), 30);
+        },
+        'october': function (topic) {
+            assert.equal(Date.getDaysInMonth(2011, 9), 31);
+        },
+        'november': function (topic) {
+            assert.equal(Date.getDaysInMonth(2011, 10), 30);
+        },
+        'december': function (topic) {
+            assert.equal(Date.getDaysInMonth(2011, 11), 31);
+        }
     }
     
 }).run();
