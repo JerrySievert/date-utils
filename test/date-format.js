@@ -37,6 +37,12 @@ vows.describe('Date Format').addBatch({
             date = new Date(date.valueOf() + date.getTimezoneOffset() * 60000);
             assert.equal(date.toCLFString(), '01/Jan/2011:01:01:01 ' + tz);
         }
-    }
+    },
     
+    'can return database formatted string': {
+        topic: function () { return new Date(Date.UTC(2011, 0, 1, 1, 1, 1, 0)) },
+        'returns the correct database string': function (date) {
+            assert.equal(date.toDBString(), '2011-01-01 01:01:01');
+        }
+    }
 }).run();
