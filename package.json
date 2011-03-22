@@ -1,13 +1,17 @@
 {
     "name": "date-utils",
     "description": "Date add-ons for Node.js",
-    "version": "0.1.7",
+    "version": "0.1.8",
     "keywords": ["date", "node", "utils"],
     "author": "Jerry Sievert <code@legitimatesounding.com>",
     "contributors": [
     {
         "name": "Jerry Sievert",
         "web": "http://legitimatesounding.com"
+    },
+    {
+        "name": "Augusto Rodrigues de Souza",
+        "web": "http://www.menkimobile.com.br"
     }
     ],
     "licenses": ["MIT"],
