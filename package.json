@@ -1,8 +1,8 @@
 {
     "name": "date-utils",
     "description": "Date add-ons for Node.js",
-    "version": "0.1.8",
-    "keywords": ["date", "node", "utils"],
+    "version": "1.0.0",
+    "keywords": ["date", "utils", "date-utils", "time"],
     "author": "Jerry Sievert <code@legitimatesounding.com>",
     "contributors": [
     {
@@ -14,8 +14,8 @@
         "web": "http://www.menkimobile.com.br"
     }
     ],
-    "licenses": ["MIT"],
-    "repositories": {
+    "licenses": ["MIT/X11"],
+    "repository": {
         "type": "git",
         "url": "http://github.com/JerrySievert/node-date-utils.git"
     },
@@ -29,8 +29,7 @@
     "os": ["linux", "darwin"],
     "dependencies": { "vows": ">0.4.0" },
     "engines": {
-        "node": ">0.1.90"
+        "node": ">0.4.0"
     },
     "main": "./lib/date-utils"
 }
-

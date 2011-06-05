@@ -38,7 +38,26 @@ vows.describe('Date Format').addBatch({
             assert.equal(date.toCLFString(), '01/Jan/2011:01:01:01 ' + tz);
         }
     },
-    
+
+    'can return correctly formatted toFormat': {
+        topic: function () { var topic = new Date(2011, 0, 1);
+                             topic.addHours(13)
+                                  .addMinutes(11)
+                                  .addSeconds(41);
+                             return topic;
+                           },
+        'returns correctly': function (date) {
+            assert.equal(date.toFormat('YYYY'), '2011');
+            assert.equal(date.toFormat('YY'), '11');
+            assert.equal(date.toFormat('MM'), '01');
+            assert.equal(date.toFormat('DD'), '01');
+            assert.equal(date.toFormat('HH'), '01');
+            assert.equal(date.toFormat('HH24'), '13');
+            assert.equal(date.toFormat('MI'), '11');
+            assert.equal(date.toFormat('SS'), '41');
+        }
+    },
+
     'can return database formatted string': {
         topic: function () { return new Date(Date.UTC(2011, 0, 1, 1, 1, 1, 0)) },
         'returns the correct database string': function (date) {
