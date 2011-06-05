@@ -14,7 +14,7 @@
         "web": "http://www.menkimobile.com.br"
     }
     ],
-    "licenses": ["MIT/X11"],
+    "license": ["MIT/X11"],
     "repository": {
         "type": "git",
         "url": "http://github.com/JerrySievert/node-date-utils.git"
