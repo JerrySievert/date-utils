@@ -38,10 +38,19 @@ vows.describe('Date Parse').addBatch({
         }
     },
     
+    
     'can parse ISO-8601': {
         topic: function () { return Date.parse('2011-01-01T01:01:01Z') },
         'returns a correct value': function (milli) {
             assert.equal(milli, 1293843661000);
+        }
+    },
+    'can parse my format': {
+        topic: function () {
+            return Date.parse('20/6/2011 8:30', 'd/M/y H:m');
+        },
+        'returns a correct value': function (milli) {
+            assert.equal(milli, 1308558600000);
         }
     }
     
