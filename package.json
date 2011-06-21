@@ -4,7 +4,7 @@
     "version": "1.1.0",
     "keywords": ["date", "utils", "date-utils", "time"],
     "author": "Jerry Sievert <code@legitimatesounding.com> (http://legitimatesounding.com/blog/)",
-    "homepage": "http://github.com/JerrySievert/node-date-utils/"
+    "homepage": "http://github.com/JerrySievert/node-date-utils/",
     "contributors": [
     {
         "name": "Jerry Sievert",
@@ -15,7 +15,7 @@
         "web": "http://www.menkimobile.com.br"
     }
     ],
-    "license": ["MIT/X11"],
+    "license": ["MIT"],
     "repository": {
         "type": "git",
         "url": "http://github.com/JerrySievert/node-date-utils.git"
@@ -27,7 +27,6 @@
         "lib": "./lib",
         "test": "./test"
     },
-    "os": ["linux", "darwin"],
     "dependencies": { "vows": ">0.4.0" },
     "engines": {
         "node": ">0.4.0"
