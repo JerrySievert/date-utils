@@ -37,88 +37,21 @@ vows.describe('Date Parse').addBatch({
             assert.equal(milli, 1293843661000);
         }
     },
+    
+    
     'can parse ISO-8601': {
         topic: function () { return Date.parse('2011-01-01T01:01:01Z') },
         'returns a correct value': function (milli) {
             assert.equal(milli, 1293843661000);
         }
     },
-    'can parse custom format': {
+    'can parse my format': {
         topic: function () {
             return Date.parse('20/6/2011 8:30', 'd/M/y H:m');
         },
         'returns a correct value': function (milli) {
             assert.equal(milli, 1308558600000);
         }
-    },
-    'parsing ISO-8601 using custom format': {
-        topic: function () { return Date.parse('2011-01-01T01:01:01Z', 'y-M-dTH:m:ssZ') },
-        'returns a correct value': function (milli) {
-            assert.equal(milli, 1293843661000);
-        }
-    },
-    'parse custom format with full month name': {
-        topic: function () {
-            return Date.parse('June 20, 2011 08:30:00', 'MMM d, y H:m:s');
-        },
-        'returns a correct value': function (milli) {
-            assert.equal(milli, 1308558600000);
-        }
-    },
-    'parse custom format with abbr month name': {
-        topic: function () {
-            return Date.parse('Jun 20, 2011 08:30:00', 'MMM d, y H:m:s');
-        },
-        'returns a correct value': function (milli) {
-            assert.equal(milli, 1308558600000);
-        }
-    },
-    'parse custom format with 12 hr clock': {
-        topic: function () {
-            return Date.parse('June 20, 2011 08:30:00AM', 'MMM d, y h:m:sa');
-        },
-        'returns a correct value': function (milli) {
-            assert.equal(milli, 1308558600000);
-        }
-    },
-    'parse mysql date format': {
-        topic: function () {
-            return Date.parse('2011-06-20 08:30:00', 'y-M-d H:m:s');
-        },
-        'returns a correct value': function (milli) {
-            assert.equal(milli, 1308558600000);
-        }
-    },
-    'parse us date format w/o time': {
-        topic: function () {
-            return Date.parse('6/20/2011', 'M/d/y');
-        },
-        'returns a correct value': function (milli) {
-            assert.equal(milli, 1308528000000);
-        }
-    },
-    'parse us date format with time': {
-        topic: function () {
-            return Date.parse('6/20/2011 00:00:01', 'M/d/y H:m:s');
-        },
-        'returns a correct value': function (milli) {
-            assert.equal(milli, 1308528001000);
-        }
-    },
-    'parse uk date format w/o time': {
-        topic: function () {
-            return Date.parse('20/6/2011', 'd/M/y');
-        },
-        'returns a correct value': function (milli) {
-            assert.equal(milli, 1308528000000);
-        }
-    },
-    'parse uk date format with time': {
-        topic: function () {
-            return Date.parse('20/6/2011 00:00:01', 'd/M/y H:m:s');
-        },
-        'returns a correct value': function (milli) {
-            assert.equal(milli, 1308528001000);
-        }
     }
+    
 }).run();
