@@ -40,7 +40,6 @@ vows.describe('Date New').addBatch({
             return Date.yesterday()
         },
         'returns the correct value': function(date) {
-            console.log("date = " + date);
             var compare = new Date().clearTime();
             compare.setSeconds(compare.getSeconds() - 86400);
             assert.equal(date.valueOf(), compare.valueOf());
