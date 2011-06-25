@@ -40,7 +40,6 @@ vows.describe('Date Parse').addBatch({
             assert.equal(milli, 1293843661000);
         }
     },
-    
     'can parse ISO-8601': {
         topic: function () { return Date.parse('2011-01-01T01:01:01Z') },
         'returns a correct value': function (milli) {
@@ -126,5 +125,4 @@ vows.describe('Date Parse').addBatch({
             assert.equal(milli, 1308528001000 + offset);
         }
     }
-    
 }).run();
