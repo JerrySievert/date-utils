@@ -54,12 +54,6 @@ vows.describe('Date Parse').addBatch({
             assert.equal(milli, 1308558600000 + offset);
         }
     },
-    'parsing ISO-8601 using custom format': {
-        topic: function () { return Date.parse('2011-01-01T01:01:01Z', 'y-M-dTH:m:ssZ') },
-        'returns a correct value': function (milli) {
-            assert.equal(milli, 1293843661000 + offset);
-        }
-    },
     'parse custom format with full month name': {
         topic: function () {
             return Date.parse('June 20, 2011 08:30:00', 'MMM d, y H:m:s');
