@@ -1,22 +1,15 @@
 {
     "name": "date-utils",
     "description": "Date add-ons for Node.js",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "keywords": ["date", "utils", "date-utils", "time"],
     "author": "Jerry Sievert <code@legitimatesounding.com> (http://legitimatesounding.com/blog/)",
     "homepage": "http://github.com/JerrySievert/node-date-utils/",
     "contributors": [
-    {
-        "name": "Jerry Sievert",
-        "web": "http://legitimatesounding.com"
-    },
-    {
-        "name": "Augusto Rodrigues de Souza",
-        "web": "http://www.menkimobile.com.br"
-    },
-    {
-        "name": "Sundarram P.V"
-    }
+        {
+            "name": "Jerry Sievert",
+            "web": "http://legitimatesounding.com"
+        }
     ],
     "license": ["MIT"],
     "repository": {
@@ -31,6 +24,9 @@
         "test": "./test"
     },
     "dependencies": { "vows": ">0.4.0" },
+    "scripts": {
+        "test": "vows --spec"
+    },
     "engines": {
         "node": ">0.4.0"
     },
