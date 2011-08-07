@@ -462,14 +462,14 @@ vows.describe('Date Validate').addBatch({
     'getOrdinalNumber works': {
         'returns correct day': function () {
             var date = new Date('02-01-2011');
-            assert.equal(date.getOrdinalNumber(), 31);
+            assert.equal(date.getOrdinalNumber(), 32);
         }
     },
 
     'getOrdinalNumber works for january 1st': {
         'returns correct day': function () {
             var date = new Date('01-01-2011');
-            assert.equal(date.getOrdinalNumber(), 0);
+            assert.equal(date.getOrdinalNumber(), 1);
         }
     },
 
