@@ -459,6 +459,19 @@ vows.describe('Date Validate').addBatch({
         }
     },
 
+    'getMinutesBetween works': {
+        topic: function () { return new Date('Jan 1, 2011 01:31:01 GMT'); },
+        '10 for 10 minutes': function (topic) {
+            assert.equal(topic.getMinutesBetween(new Date('Jan 1, 2011 01:41:01 GMT')), 10);
+        },
+        '-10 for 10 minutes ago': function (topic) {
+            assert.equal(topic.getMinutesBetween(new Date('Jan 1, 2011 01:21:01 GMT')), -10);
+        },
+        '0 for same minute': function (topic) {
+            assert.equal(topic.getMinutesBetween(new Date('Jan 1, 2011 01:31:01 GMT')), 0);
+        }
+    },
+
     'getOrdinalNumber works': {
         'returns correct day': function () {
             var date = new Date('02-01-2011');
