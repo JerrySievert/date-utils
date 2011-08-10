@@ -53,6 +53,9 @@
     d.isBefore(date); // true/false, true if this is before date passed
     d.isAfter(date); // true/false, true if this is after date passed
     d.getDaysBetween(date); // returns number of full days between this and passed
+    d.getHoursBetween(date); // returns number of hours days between this and passed
+    d.getMinutesBetween(date); // returns number of full minutes between this and passed
+    d.getSecondsBetween(date); // returns number of full seconds between this and passed
     
     d.add({ milliseconds: 30,
             minutes: 1,

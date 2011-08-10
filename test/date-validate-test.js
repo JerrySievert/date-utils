@@ -475,6 +475,32 @@ vows.describe('Date Validate').addBatch({
         }
     },
 
+    'getSecondsBetween works': {
+        topic: function () { return new Date('Jan 1, 2011 23:31:01 GMT'); },
+        '10 for 10 seconds': function (topic) {
+            assert.equal(topic.getSecondsBetween(new Date('Jan 1, 2011 23:31:11 GMT')), 10);
+        },
+        '-10 for 10 seconds ago': function (topic) {
+            assert.equal(topic.getSecondsBetween(new Date('Jan 1, 2011 23:30:51 GMT')), -10);
+        },
+        '0 for same second': function (topic) {
+            assert.equal(topic.getSecondsBetween(new Date('Jan 1, 2011 23:31:01 GMT')), 0);
+        }
+    },
+
+    'getHoursBetween works': {
+        topic: function () { return new Date('Jan 1, 2011 23:31:01 GMT'); },
+        '1 for 1 hour': function (topic) {
+            assert.equal(topic.getHoursBetween(new Date('Jan 2, 2011 00:31:01 GMT')), 1);
+        },
+        '-1 for 1 hour ago': function (topic) {
+            assert.equal(topic.getHoursBetween(new Date('Jan 1, 2011 22:31:01 GMT')), -1);
+        },
+        '0 for same hour': function (topic) {
+            assert.equal(topic.getHoursBetween(new Date('Jan 1, 2011 23:31:01 GMT')), 0);
+        }
+    },
+
     'getOrdinalNumber works': {
         'returns correct day': function () {
             var date = new Date('02-01-2011');
