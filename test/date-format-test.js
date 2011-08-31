@@ -63,5 +63,27 @@ vows.describe('Date Format').addBatch({
         'returns the correct database string': function (date) {
             assert.equal(date.toDBString(), '2011-01-01 01:01:01');
         }
+    },
+    
+    'when passing an argument to toYMD': {
+        topic: function () { return new Date(Date.parse(2011, 0, 1, 1, 1, 1, 0)).toYMD('-'); },
+        'the correct string is returned': function (topic) {
+            assert.equal(topic, '2011-01-01');
+        }
+    },
+
+    'when passing an empty argument to toYMD': {
+        topic: function () { return new Date(Date.parse(2011, 0, 1, 1, 1, 1, 0)).toYMD(''); },
+        'the correct string is returned': function (topic) {
+            assert.equal(topic, '20110101');
+        }
+    },
+
+    'when passing no argument to toYMD': {
+        topic: function () { return new Date(Date.parse(2011, 0, 1, 1, 1, 1, 0)).toYMD(); },
+        'the correct default is chosen and the string is returned': function (topic) {
+            assert.equal(topic, '2011-01-01');
+        }
     }
+
 }).export(module);
