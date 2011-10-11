@@ -5,6 +5,7 @@
 - Micro-Framework adding missing functionality to the Date object
 - Useable as a polyfill in the browser
 - Useable as a polyfill in Node.js
+- Works in CouchDB
 
 ## Using within a Browser
     <script type="text/javascript" src="date-utils.min.js"></script>
@@ -13,6 +14,8 @@
     $ npm install date-utils
     
     require('date-utils');
+
+Note: this will not work in the `REPL` due to how `Node.js` handles context in the `REPL`.
 
 ## Static Methods
     Date.today(); // today, 00:00:00
