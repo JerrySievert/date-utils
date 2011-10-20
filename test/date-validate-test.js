@@ -16,7 +16,7 @@ vows.describe('Date Validate').addBatch({
             assert.equal(topic.validateHour(12), true);
         }
     },
-    
+
     'can deal with minutes': {
         topic: function () { return Date; },
         'false for less than 0': function (topic) {
@@ -29,7 +29,7 @@ vows.describe('Date Validate').addBatch({
             assert.equal(topic.validateMinute(30), true);
         }
     },
-    
+
     'can deal with seconds': {
         topic: function () { return Date; },
         'false for less than 0': function (topic) {
@@ -42,7 +42,7 @@ vows.describe('Date Validate').addBatch({
             assert.equal(topic.validateSecond(30), true);
         }
     },
-    
+
     'can deal with milliseconds': {
         topic: function () { return Date; },
         'false for less than 0': function (topic) {
@@ -55,7 +55,7 @@ vows.describe('Date Validate').addBatch({
             assert.equal(topic.validateMillisecond(500), true);
         }
     },
-    
+
     'can deal with years': {
         topic: function () { return Date; },
         'false for less than 0': function (topic) {
@@ -68,7 +68,7 @@ vows.describe('Date Validate').addBatch({
             assert.equal(topic.validateYear(5000), true);
         }
     },
-    
+
     'can deal with days': {
         topic: function () { return Date; },
         'false for less than 0': function (topic) {
@@ -81,7 +81,7 @@ vows.describe('Date Validate').addBatch({
             assert.equal(topic.validateDay(10, 2011, 11), true);
         }
     },
-    
+
     'static compare works': {
         topic: function () { return Date.today(); },
         '-1 for yesterday': function (topic) {
@@ -94,7 +94,7 @@ vows.describe('Date Validate').addBatch({
             assert.equal(Date.compare(Date.today(), topic), 0);
         }
     },
-    
+
     'static equals works': {
         topic: function () { return Date.today(); },
         'equal for today': function (topic) {
@@ -107,7 +107,7 @@ vows.describe('Date Validate').addBatch({
             assert.equal(Date.equals(topic, Date.yesterday()), false);
         }
     },
-    
+
     'getDayNumberFromName works': {
         topic: function () { return Date; },
         'sunday works': function (topic) {
@@ -177,7 +177,7 @@ vows.describe('Date Validate').addBatch({
             assert.equal(topic.getDayNumberFromName('junk'), undefined);
         }
     },
-    
+
     'getMonthNumberFromName works': {
         topic: function () { return Date; },
         'january works': function (topic) {
@@ -250,7 +250,7 @@ vows.describe('Date Validate').addBatch({
             assert.equal(topic.getMonthNumberFromName('dec'), 11);
         }
     },
-    
+
     'can add milliseconds': {
         'adding positive milliseconds works': function () {
             var topic = Date.today();
@@ -265,7 +265,7 @@ vows.describe('Date Validate').addBatch({
             assert.equal(topic.getMilliseconds(), 250);
         }
     },
-    
+
     'can add seconds': {
         'adding positive seconds works': function () {
             var topic = Date.today();
@@ -295,7 +295,7 @@ vows.describe('Date Validate').addBatch({
             assert.equal(topic.getMinutes(), 25);
         }
     },
-    
+
     'can add hours': {
         'adding positive hours works': function () {
             var topic = Date.today();
@@ -325,7 +325,7 @@ vows.describe('Date Validate').addBatch({
             assert.equal(topic.getDate(), 9);
         }
     },
-    
+
     'can add weeks': {
         'adding positive weeks works': function () {
             var topic = new Date(2011, 0, 10);
@@ -374,7 +374,7 @@ vows.describe('Date Validate').addBatch({
             assert.equal(clone.valueOf(), topic.valueOf());
         }
     },
-    
+
     'between works': {
         'between returns true for valid start and end': function () {
             var today = Date.today();
@@ -389,7 +389,7 @@ vows.describe('Date Validate').addBatch({
             assert.equal(today.between(tomorrow, yesterday), false);
         }
     },
-    
+
     'compareTo works': {
         topic: function () { return Date.today(); },
         '-1 for tomorrow': function (topic) {
@@ -402,7 +402,7 @@ vows.describe('Date Validate').addBatch({
             assert.equal(topic.compareTo(Date.today()), 0);
         }
     },
-    
+
 
     'equals instance works': {
         topic: function () { return Date.today(); },
@@ -433,7 +433,7 @@ vows.describe('Date Validate').addBatch({
             assert.equal(topic.isAfter(Date.yesterday()), true);
         }
     },
-    
+
     'getDaysBetween works': {
         topic: function () { return Date.today(); },
         '1 for tomorrow': function (topic) {
@@ -446,7 +446,7 @@ vows.describe('Date Validate').addBatch({
             assert.equal(topic.getDaysBetween(Date.today()), 0);
         }
     },
-    
+
     'getDaysBetween works for beginning of year': {
         topic: function () {  return new Date('Jan 1, 2011 01:01:01 GMT'); },
         'should return 0 for the same day': function (topic) {
@@ -556,5 +556,5 @@ vows.describe('Date Validate').addBatch({
             assert.equal(Date.getDaysInMonth(2011, 11), 31);
         }
     }
-    
+
 }).export(module);
