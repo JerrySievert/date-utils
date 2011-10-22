@@ -2,9 +2,6 @@ var vows   = require('vows');
 var assert = require('assert');
 
 require('../lib/date-utils.js');
-//getTimezoneOffset returns number of minutes
-//converting to milliseconds
-var offset = (new Date().getTimezoneOffset()) * 60 * 1000; 
 
 vows.describe('Date Parse').addBatch({
     'can instantiate milliseconds': {
@@ -51,7 +48,8 @@ vows.describe('Date Parse').addBatch({
             return Date.parse('20/6/2011 8:30', 'd/M/y H:m');
         },
         'returns a correct value': function (milli) {
-            assert.equal(milli, 1308558600000 + offset);
+            var against = new Date(2011, 5, 20, 8, 30, 0);
+            assert.equal(milli, against.valueOf());
         }
     },
     'parse custom format with full month name': {
@@ -59,7 +57,8 @@ vows.describe('Date Parse').addBatch({
             return Date.parse('June 20, 2011 08:30:00', 'MMM d, y H:m:s');
         },
         'returns a correct value': function (milli) {
-            assert.equal(milli, 1308558600000 + offset);
+            var against = new Date(2011, 5, 20, 8, 30, 0);
+            assert.equal(milli, against.valueOf());
         }
     },
     'parse custom format with abbr month name': {
@@ -67,7 +66,8 @@ vows.describe('Date Parse').addBatch({
             return Date.parse('Jun 20, 2011 08:30:00', 'MMM d, y H:m:s');
         },
         'returns a correct value': function (milli) {
-            assert.equal(milli, 1308558600000 + offset);
+            var against = new Date(2011, 5, 20, 8, 30, 0);
+            assert.equal(milli, against.valueOf());
         }
     },
     'parse custom format with 12 hr clock': {
@@ -75,7 +75,8 @@ vows.describe('Date Parse').addBatch({
             return Date.parse('June 20, 2011 08:30:00AM', 'MMM d, y h:m:sa');
         },
         'returns a correct value': function (milli) {
-            assert.equal(milli, 1308558600000 + offset);
+            var against = new Date(2011, 5, 20, 8, 30, 0);
+            assert.equal(milli, against.valueOf());
         }
     },
     'parse mysql date format': {
@@ -83,7 +84,8 @@ vows.describe('Date Parse').addBatch({
             return Date.parse('2011-06-20 08:30:00', 'y-M-d H:m:s');
         },
         'returns a correct value': function (milli) {
-            assert.equal(milli, 1308558600000 + offset);
+            var against = new Date(2011, 5, 20, 8, 30, 0);
+            assert.equal(milli, against.valueOf());
         }
     },
     'parse us date format w/o time': {
@@ -91,7 +93,8 @@ vows.describe('Date Parse').addBatch({
             return Date.parse('6/20/2011', 'M/d/y');
         },
         'returns a correct value': function (milli) {
-            assert.equal(milli, 1308528000000 + offset);
+            var against = new Date(2011, 5, 20);
+            assert.equal(milli, against.valueOf());
         }
     },
     'parse us date format with time': {
@@ -99,7 +102,8 @@ vows.describe('Date Parse').addBatch({
             return Date.parse('6/20/2011 00:00:01', 'M/d/y H:m:s');
         },
         'returns a correct value': function (milli) {
-            assert.equal(milli, 1308528001000 + offset);
+            var against = new Date(2011, 5, 20, 0, 0, 1);
+            assert.equal(milli, against.valueOf());
         }
     },
     'parse uk date format w/o time': {
@@ -107,7 +111,8 @@ vows.describe('Date Parse').addBatch({
             return Date.parse('20/6/2011', 'd/M/y');
         },
         'returns a correct value': function (milli) {
-            assert.equal(milli, 1308528000000 + offset);
+            var against = new Date(2011, 5, 20);
+            assert.equal(milli, against.valueOf());
         }
     },
     'parse uk date format with time': {
@@ -116,7 +121,8 @@ vows.describe('Date Parse').addBatch({
             return Date.parse('20/6/2011 00:00:01', 'd/M/y H:m:s');
         },
         'returns a correct value': function (milli) {
-            assert.equal(milli, 1308528001000 + offset);
+            var against = new Date(2011, 5, 20, 0, 0, 1);
+            assert.equal(milli, against.valueOf());
         }
     }
 }).export(module);
