@@ -1,7 +1,7 @@
 {
     "name": "date-utils",
     "description": "Date add-ons for Node.js",
-    "version": "1.2.4",
+    "version": "1.2.5",
     "keywords": ["date", "utils", "date-utils", "time"],
     "author": "Jerry Sievert <code@legitimatesounding.com> (http://legitimatesounding.com/blog/)",
     "homepage": "http://github.com/JerrySievert/node-date-utils/",
@@ -17,7 +17,7 @@
         "url": "http://github.com/JerrySievert/node-date-utils.git"
     },
     "bugs": {
-        "web": "http://github.com/JerrySievert/node-date-utils/issues"
+        "url": "http://github.com/JerrySievert/node-date-utils/issues"
     },
     "directories": {
         "lib": "./lib",
