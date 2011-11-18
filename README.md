@@ -1,5 +1,7 @@
 # Date-Utils: Polyfills for the Date object
 
+[![Build Status](https://secure.travis-ci.org/JerrySievert/node-date-utils.png)](http://travis-ci.org/JerrySievert/node-date-utils)
+
 ## In a nutshell
 
 - Micro-Framework adding missing functionality to the Date object
