@@ -49,7 +49,7 @@ Note: this will not work in the `REPL` due to how `Node.js` handles context in t
     d.clearTime(); // sets time to 00:00:00
     d.setTimeToNow(); // sets time to current time
     
-    d.toFormat(format); // returns date formatted with YYYY, MM, DD, HH, HH24, MI, SS
+    d.toFormat(format); // returns date formatted with YYYY, MMM, MM, M, DDDD, DDD, DD, D, HH, H, HH24, MI, SS
     d.toYMD(separator); // returns YYYY-MM-DD by default, separator changes delimiter
     
     d.between(date1, date2); // true/false if the date/time is between date1 and date2
