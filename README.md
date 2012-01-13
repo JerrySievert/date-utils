@@ -17,7 +17,7 @@
     
     require('date-utils');
 
-Note: this will not work in the `REPL` due to how `Node.js` handles context in the `REPL`.
+Note: This did not work in the `REPL` before `Node.js 0.6` due to how `Node.js` handles context in the `REPL`.
 
 ## Static Methods
     Date.today(); // today, 00:00:00
@@ -49,7 +49,13 @@ Note: this will not work in the `REPL` due to how `Node.js` handles context in t
     d.clearTime(); // sets time to 00:00:00
     d.setTimeToNow(); // sets time to current time
     
-    d.toFormat(format); // returns date formatted with YYYY, MMM, MM, M, DDDD, DDD, DD, D, HH, H, HH24, MI, SS
+    d.toFormat(format); // returns date formatted with:
+    // YYYY - Four digit year
+    // MMMM  - Full month name. ie January
+    // MMM  - Short month name. ie Jan
+    // MM   - Zero padded month ie 01
+    // M    - Month ie 1
+    // DDDD - Full day or week name , DDD, DD, D, HH, H, HH24, MI, SS
     d.toYMD(separator); // returns YYYY-MM-DD by default, separator changes delimiter
     
     d.between(date1, date2); // true/false if the date/time is between date1 and date2
