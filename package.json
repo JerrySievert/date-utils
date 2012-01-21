@@ -1,7 +1,7 @@
 {
     "name": "date-utils",
     "description": "Date add-ons for Node.js",
-    "version": "1.2.6",
+    "version": "1.2.7",
     "keywords": ["date", "utils", "date-utils", "time"],
     "author": "Jerry Sievert <code@legitimatesounding.com> (http://legitimatesounding.com/blog/)",
     "homepage": "http://github.com/JerrySievert/node-date-utils/",
