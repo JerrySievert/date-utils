@@ -49,8 +49,15 @@ vows.describe('Date Format').addBatch({
         'returns correctly': function (date) {
             assert.equal(date.toFormat('YYYY'), '2011');
             assert.equal(date.toFormat('YY'), '11');
+            assert.equal(date.toFormat('M'), '1');
             assert.equal(date.toFormat('MM'), '01');
+            assert.equal(date.toFormat('MMM'), 'Jan');
+            assert.equal(date.toFormat('MMMM'), 'January');
+            assert.equal(date.toFormat('D'), '1');
             assert.equal(date.toFormat('DD'), '01');
+            assert.equal(date.toFormat('DDD'), 'Sat');
+            assert.equal(date.toFormat('DDDD'), 'Saturday');
+            assert.equal(date.toFormat('H'), '1');
             assert.equal(date.toFormat('HH'), '01');
             assert.equal(date.toFormat('HH24'), '13');
             assert.equal(date.toFormat('MI'), '11');
