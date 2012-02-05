@@ -48,14 +48,23 @@ Note: This did not work in the `REPL` before `Node.js 0.6` due to how `Node.js` 
     d.getOrdinalNumber(); // day number of the year, 1-366 (leap year)
     d.clearTime(); // sets time to 00:00:00
     d.setTimeToNow(); // sets time to current time
-    
     d.toFormat(format); // returns date formatted with:
-    // YYYY - Four digit year
-    // MMMM  - Full month name. ie January
-    // MMM  - Short month name. ie Jan
-    // MM   - Zero padded month ie 01
-    // M    - Month ie 1
-    // DDDD - Full day or week name , DDD, DD, D, HH, H, HH24, MI, SS
+      // YYYY - Four digit year
+      // MMMM - Full month name. ie January
+      // MMM  - Short month name. ie Jan
+      // MM   - Zero padded month ie 01
+      // M    - Month ie 1
+      // DDDD - Full day or week name ie Tuesday 
+      // DDD  - Abbreviated day of the week ie Tue
+      // DD   - Zero padded day ie 08
+      // D    - Day ie 8
+      // HH24 - Hours in 24 notation ie 18
+      // HH   - Padded Hours ie 06
+      // H    - Hours ie 6
+      // MI   - Padded Minutes
+      // SS   - Padded Seconds
+      // PP   - AM or PM
+      // P    - am or pm
     d.toYMD(separator); // returns YYYY-MM-DD by default, separator changes delimiter
     
     d.between(date1, date2); // true/false if the date/time is between date1 and date2
