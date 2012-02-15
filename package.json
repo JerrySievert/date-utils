@@ -23,7 +23,7 @@
         "lib": "./lib",
         "test": "./test"
     },
-    "dependencies": { "vows": ">0.4.0" },
+    "devDependencies": { "vows": ">0.4.0" },
     "scripts": {
         "test": "vows --spec"
     },
