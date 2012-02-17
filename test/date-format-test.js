@@ -40,7 +40,7 @@ vows.describe('Date Format').addBatch({
     },
 
     'can return correctly formatted toFormat': {
-        topic: function () { var topic = new Date(2011, 0, 1);
+        topic: function () { var topic = new Date(2011, 2, 1);
                              topic.addHours(13)
                                   .addMinutes(11)
                                   .addSeconds(41);
@@ -49,20 +49,42 @@ vows.describe('Date Format').addBatch({
         'returns correctly': function (date) {
             assert.equal(date.toFormat('YYYY'), '2011');
             assert.equal(date.toFormat('YY'), '11');
-            assert.equal(date.toFormat('M'), '1');
-            assert.equal(date.toFormat('MM'), '01');
-            assert.equal(date.toFormat('MMM'), 'Jan');
-            assert.equal(date.toFormat('MMMM'), 'January');
+            assert.equal(date.toFormat('M'), '3');
+            assert.equal(date.toFormat('MM'), '03');
+            assert.equal(date.toFormat('MMM'), 'Mar');
+            assert.equal(date.toFormat('MMMM'), 'March');
             assert.equal(date.toFormat('D'), '1');
             assert.equal(date.toFormat('DD'), '01');
-            assert.equal(date.toFormat('DDD'), 'Sat');
-            assert.equal(date.toFormat('DDDD'), 'Saturday');
+            assert.equal(date.toFormat('DDD'), 'Tue');
+            assert.equal(date.toFormat('DDDD'), 'Tuesday');
             assert.equal(date.toFormat('H'), '1');
             assert.equal(date.toFormat('HH'), '01');
             assert.equal(date.toFormat('HH24'), '13');
             assert.equal(date.toFormat('MI'), '11');
             assert.equal(date.toFormat('SS'), '41');
+        },
+
+        'returns complex formats correct': function (date) {
+            assert.equal(date.toFormat('DDD-MMM-YYYY'), 'Tue-Mar-2011');
+            assert.equal(date.toFormat('DD/MM/YY'), '01/03/11');
+            assert.equal(date.toFormat('D:M:YY'), '1:3:11');
         }
+    },
+
+    'can return correct months': {
+        topic: function () { return new Date(2011, 0, 1); },
+        'returns Jan correcty': function (date) { assert.equal(date.addMonths(0).toFormat('MMM'), 'Jan') },
+        'returns Feb correcty': function (date) { assert.equal(date.addMonths(1).toFormat('MMM'), 'Feb') },
+        'returns Mar correcty': function (date) { assert.equal(date.addMonths(1).toFormat('MMM'), 'Mar') },
+        'returns Apr correcty': function (date) { assert.equal(date.addMonths(1).toFormat('MMM'), 'Apr') },
+        'returns May correcty': function (date) { assert.equal(date.addMonths(1).toFormat('MMM'), 'May') },
+        'returns Jun correcty': function (date) { assert.equal(date.addMonths(1).toFormat('MMM'), 'Jun') },
+        'returns Jul correcty': function (date) { assert.equal(date.addMonths(1).toFormat('MMM'), 'Jul') },
+        'returns Aug correcty': function (date) { assert.equal(date.addMonths(1).toFormat('MMM'), 'Aug') },
+        'returns Sep correcty': function (date) { assert.equal(date.addMonths(1).toFormat('MMM'), 'Sep') },
+        'returns Oct correcty': function (date) { assert.equal(date.addMonths(1).toFormat('MMM'), 'Oct') },
+        'returns Nov correcty': function (date) { assert.equal(date.addMonths(1).toFormat('MMM'), 'Nov') },
+        'returns Dec correcty': function (date) { assert.equal(date.addMonths(1).toFormat('MMM'), 'Dec') },
     },
 
     'can return database formatted string': {
