@@ -73,6 +73,37 @@ vows.describe('Date Format').addBatch({
         }
     },
 
+    'can return correctly formatted toUTCFormat': {
+        topic: function () {
+            return topic = new Date(Date.UTC(2011, 2, 1, 13, 11, 41, 23));
+        },
+
+        'returns correctly': function (date) {
+            assert.equal(date.toUTCFormat('YYYY'), '2011');
+            assert.equal(date.toUTCFormat('YY'), '11');
+            assert.equal(date.toUTCFormat('M'), '3');
+            assert.equal(date.toUTCFormat('MM'), '03');
+            assert.equal(date.toUTCFormat('MMM'), 'Mar');
+            assert.equal(date.toUTCFormat('MMMM'), 'March');
+            assert.equal(date.toUTCFormat('D'), '1');
+            assert.equal(date.toUTCFormat('DD'), '01');
+            assert.equal(date.toUTCFormat('DDD'), 'Tue');
+            assert.equal(date.toUTCFormat('DDDD'), 'Tuesday');
+            assert.equal(date.toUTCFormat('H'), '1');
+            assert.equal(date.toUTCFormat('HH'), '01');
+            assert.equal(date.toUTCFormat('HH24'), '13');
+            assert.equal(date.toUTCFormat('MI'), '11');
+            assert.equal(date.toUTCFormat('SS'), '41');
+            assert.equal(date.toUTCFormat('LL'), '023');
+        },
+
+        'returns complex formats correct': function (date) {
+            assert.equal(date.toUTCFormat('DDD-MMM-YYYY'), 'Tue-Mar-2011');
+            assert.equal(date.toUTCFormat('DD/MM/YY'), '01/03/11');
+            assert.equal(date.toUTCFormat('D:M:YY'), '1:3:11');
+        }
+    },
+
     'can return correct months': {
         topic: function () { return new Date(2011, 0, 1); },
         'returns Jan correcty': function (date) { assert.equal(date.addMonths(0).toFormat('MMM'), 'Jan'); },
