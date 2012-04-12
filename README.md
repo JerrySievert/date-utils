@@ -24,7 +24,7 @@ Note: This did not work in the `REPL` before `Node.js 0.6` due to how `Node.js` 
     Date.yesterday(); // yesterday, 00:00:00    
     Date.tomorrow(); // tomorrow, 00:00:00
 
-    Date.validateDay(year, month, day); // true/false whether a date is valid
+    Date.validateDay(day, year, month); // true/false whether a date is valid
     Date.validateYear(year); // true/false whether a year is valid
     Date.validateMonth(month); // true/false whether a month is valid
     Date.validateHour(hour); // true/false whether an hour is valid
