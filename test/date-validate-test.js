@@ -488,6 +488,19 @@ vows.describe('Date Validate').addBatch({
         }
     },
 
+    'getMillisecondsBetween works': {
+        topic: function () { return new Date(); },
+        '10 for 10 milliseconds': function (topic) {
+            assert.equal(topic.getMillisecondsBetween(new Date(+topic + 10)), 10);
+        },
+        '-10 for 10 milliseconds ago': function (topic) {
+            assert.equal(topic.getMillisecondsBetween(new Date(+topic - 10)), -10);
+        },
+        '0 for same millisecond': function (topic) {
+            assert.equal(topic.getMillisecondsBetween(new Date(+topic)), 0);
+        }
+    },
+
     'getHoursBetween works': {
         topic: function () { return new Date('Jan 1, 2011 23:31:01 GMT'); },
         '1 for 1 hour': function (topic) {
