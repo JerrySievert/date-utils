@@ -251,6 +251,85 @@ vows.describe('Date Validate').addBatch({
         }
     },
 
+    'getMonthNameFromNumber works': {
+        topic: function () { return Date; },
+        '0 works': function (topic) {
+            assert.equal(topic.getMonthNameFromNumber(0), 'January');
+        },
+        '1 works': function (topic) {
+            assert.equal(topic.getMonthNameFromNumber(1), 'February');
+        },
+        '2 works': function (topic) {
+            assert.equal(topic.getMonthNameFromNumber(2), 'March');
+        },
+        '3 works': function (topic) {
+            assert.equal(topic.getMonthNameFromNumber(3), 'April');
+        },
+        '4 works': function (topic) {
+            assert.equal(topic.getMonthNameFromNumber(4), 'May');
+        },
+        '5 works': function (topic) {
+            assert.equal(topic.getMonthNameFromNumber(5), 'June');
+        },
+        '6 works': function (topic) {
+            assert.equal(topic.getMonthNameFromNumber(6), 'July');
+        },
+        '7 works': function (topic) {
+            assert.equal(topic.getMonthNameFromNumber(7), 'August');
+        },
+        '8 works': function (topic) {
+            assert.equal(topic.getMonthNameFromNumber(8), 'September');
+        },
+        '9 works': function (topic) {
+            assert.equal(topic.getMonthNameFromNumber(9), 'October');
+        },
+        '10 works': function (topic) {
+            assert.equal(topic.getMonthNameFromNumber(10), 'November');
+        },
+        '11 works': function (topic) {
+            assert.equal(topic.getMonthNameFromNumber(11), 'December');
+        }
+    },
+
+    'getMonthAbbrFromNumber works': {
+        topic: function () { return Date; },
+        '0 works': function (topic) {
+            assert.equal(topic.getMonthAbbrFromNumber(0), 'Jan');
+        },
+        '1 works': function (topic) {
+            assert.equal(topic.getMonthAbbrFromNumber(1), 'Feb');
+        },
+        '2 works': function (topic) {
+            assert.equal(topic.getMonthAbbrFromNumber(2), 'Mar');
+        },
+        '3 works': function (topic) {
+            assert.equal(topic.getMonthAbbrFromNumber(3), 'Apr');
+        },
+        '4 works': function (topic) {
+            assert.equal(topic.getMonthAbbrFromNumber(4), 'May');
+        },
+        '5 works': function (topic) {
+            assert.equal(topic.getMonthAbbrFromNumber(5), 'Jun');
+        },
+        '6 works': function (topic) {
+            assert.equal(topic.getMonthAbbrFromNumber(6), 'Jul');
+        },
+        '7 works': function (topic) {
+            assert.equal(topic.getMonthAbbrFromNumber(7), 'Aug');
+        },
+        '8 works': function (topic) {
+            assert.equal(topic.getMonthAbbrFromNumber(8), 'Sep');
+        },
+        '9 works': function (topic) {
+            assert.equal(topic.getMonthAbbrFromNumber(9), 'Oct');
+        },
+        '10 works': function (topic) {
+            assert.equal(topic.getMonthAbbrFromNumber(10), 'Nov');
+        },
+        '11 works': function (topic) {
+            assert.equal(topic.getMonthAbbrFromNumber(11), 'Dec');
+        }
+    },
     'can add milliseconds': {
         'adding positive milliseconds works': function () {
             var topic = Date.today();
