@@ -330,6 +330,106 @@ vows.describe('Date Validate').addBatch({
             assert.equal(topic.getMonthAbbrFromNumber(11), 'Dec');
         }
     },
+
+    'getLastMonthName': {
+        'when it is January': {
+            topic: function () {
+                return new Date("January 15, 2010 12:00:00");
+            },
+            'returns December': function(instance) {
+                assert.equal(instance.getLastMonthName(), 'December');
+            }
+        },
+        'when it is Feburary': {
+            topic: function () {
+                return new Date("Feburary 15, 2010 12:00:00");
+            },
+            'returns January': function(instance) {
+                assert.equal(instance.getLastMonthName(), 'January');
+            }
+        },
+        'when it is March': {
+            topic: function () {
+                return new Date("March 15, 2010 12:00:00");
+            },
+            'returns February': function(instance) {
+                assert.equal(instance.getLastMonthName(), 'February');
+            }
+        },
+        'when it is April': {
+            topic: function () {
+                return new Date("April 15, 2010 12:00:00");
+            },
+            'returns March': function(instance) {
+                assert.equal(instance.getLastMonthName(), 'March');
+            }
+        },
+        'when it is May': {
+            topic: function () {
+                return new Date("May 15, 2010 12:00:00");
+            },
+            'returns April': function(instance) {
+                assert.equal(instance.getLastMonthName(), 'April');
+            }
+        },
+        'when it is June': {
+            topic: function () {
+                return new Date("June 15, 2010 12:00:00");
+            },
+            'returns May': function(instance) {
+                assert.equal(instance.getLastMonthName(), 'May');
+            }
+        },
+        'when it is July': {
+            topic: function () {
+                return new Date("July 15, 2010 12:00:00");
+            },
+            'returns June': function(instance) {
+                assert.equal(instance.getLastMonthName(), 'June');
+            }
+        },
+        'when it is August': {
+            topic: function () {
+                return new Date("August 15, 2010 12:00:00");
+            },
+            'returns July': function(instance) {
+                assert.equal(instance.getLastMonthName(), 'July');
+            }
+        },
+        'when it is September': {
+            topic: function () {
+                return new Date("September 15, 2010 12:00:00");
+            },
+            'returns August': function(instance) {
+                assert.equal(instance.getLastMonthName(), 'August');
+            }
+        },
+        'when it is October': {
+            topic: function () {
+                return new Date("October 15, 2010 12:00:00");
+            },
+            'returns September': function(instance) {
+                assert.equal(instance.getLastMonthName(), 'September');
+            }
+        },
+        'when it is November': {
+            topic: function () {
+                return new Date("November 15, 2010 12:00:00");
+            },
+            'returns October': function(instance) {
+                assert.equal(instance.getLastMonthName(), 'October');
+            }
+        },
+        'when it is December': {
+            topic: function () {
+                return new Date("December 15, 2010 12:00:00");
+            },
+            'returns November': function(instance) {
+                assert.equal(instance.getLastMonthName(), 'November');
+            }
+        }
+    },
+
     'can add milliseconds': {
         'adding positive milliseconds works': function () {
             var topic = Date.today();
