@@ -508,6 +508,20 @@ vows.describe('Date Validate').addBatch({
         }
     },
 
+    'isWeekend works': {
+        'false for weekdays': function (topic) {
+            assert.equal(new Date(2013,2,11).isWeekend(), false);
+            assert.equal(new Date(2013,2,12).isWeekend(), false);
+            assert.equal(new Date(2013,2,13).isWeekend(), false);
+            assert.equal(new Date(2013,2,14).isWeekend(), false);
+            assert.equal(new Date(2013,2,15).isWeekend(), false);
+        },
+        'true for weekend': function (topic) {
+            assert.equal(new Date(2013,2,16).isWeekend(), true);
+            assert.equal(new Date(2013,2,17).isWeekend(), true);
+        }
+    },
+
     'getDaysBetween works': {
         topic: function () { return Date.today(); },
         '1 for tomorrow': function (topic) {
