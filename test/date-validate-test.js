@@ -356,6 +356,80 @@ vows.describe('Date Validate').addBatch({
         }
     },
 
+    'can add weekdays within a week': {
+        'adding positive weekdays': function () {
+            var topic = new Date(2013, 1, 13); //Wed
+            topic.addWeekdays(2);
+            assert.equal(topic.getDay(), 5);
+        },
+        'adding negative weekdays': function () {
+            var topic = new Date(2013, 1, 13); //Wed
+            topic.addWeekdays(-2);
+            assert.equal(topic.getDay(), 1);
+        }
+    },
+    'can add weekdays across one week': {
+        'adding positive weekdays': function () {
+            var wed = new Date(2013, 1, 13);
+            assert.equal(wed.addWeekdays(3).getDate(), 18);
+            var fri = new Date(2013, 1, 15);
+            assert.equal(fri.addWeekdays(1).getDate(), 18);
+        },
+        'adding negative weekdays': function () {
+            var wed = new Date(2013, 1, 13);
+            assert.equal(wed.addWeekdays(-3).getDate(), 8);
+            var mon = new Date(2013, 1, 11);
+            assert.equal(mon.addWeekdays(-1).getDate(), 8);
+        }
+    },
+    'can add weekdays across multiple weeks': {
+        'adding positive weekdays': function () {
+            var tue = new Date(2013, 3, 16);
+            assert.equal(tue.clone().addWeekdays(14).getDate(), 6);
+            assert.equal(tue.clone().addWeekdays(14).getMonth(), 4);
+            var fri = new Date(2013, 3, 19);
+            assert.equal(fri.clone().addWeekdays(14).getDate(), 9);
+            assert.equal(fri.clone().addWeekdays(14).getMonth(), 4);
+        },
+        'adding negative weekdays': function () {
+            var tue = new Date(2013, 3, 16); //Wed
+            assert.equal(tue.clone().addWeekdays(-17).getDate(), 22);
+            assert.equal(tue.clone().addWeekdays(-17).getMonth(), 2);
+            var mon = new Date(2013, 3, 15); //Wed
+            assert.equal(mon.clone().addWeekdays(-17).getDate(), 21);
+            assert.equal(mon.clone().addWeekdays(-17).getMonth(), 2);
+        }
+    },
+    'can add weekdays to a Saturday': {
+        'adding positive weekdays': function () {
+            var sat = new Date(2013, 1, 16);
+            assert.equal(sat.clone().addWeekdays(1).getDate(), 18);
+            assert.equal(sat.clone().addWeekdays(11).getDate(), 4);
+            assert.equal(sat.clone().addWeekdays(31).getDate(), 1);
+        },
+        'adding negative weekdays': function () {
+            var sat = new Date(2013, 1, 16);
+            assert.equal(sat.clone().addWeekdays(-1).getDate(), 15);
+            assert.equal(sat.clone().addWeekdays(-15).getDate(), 28);
+            assert.equal(sat.clone().addWeekdays(-33).getDate(), 2);
+        }
+    },
+    'can add weekdays to a Sunday': {
+        'adding positive weekdays': function () {
+            var sun = new Date(2013, 1, 17);
+            assert.equal(sun.clone().addWeekdays(1).getDate(), 18);
+            assert.equal(sun.clone().addWeekdays(11).getDate(), 4);
+            assert.equal(sun.clone().addWeekdays(31).getDate(), 1);
+
+        },
+        'adding negative weekdays': function () {
+            var sun = new Date(2013, 1, 17);
+            assert.equal(sun.clone().addWeekdays(-1).getDate(), 15);
+            assert.equal(sun.clone().addWeekdays(-15).getDate(), 28);
+            assert.equal(sun.clone().addWeekdays(-33).getDate(), 2);
+        }
+    },
+
     'can set time to now': {
         'setting time to now works': function () {
             var topic = Date.today();
