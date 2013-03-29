@@ -568,6 +568,30 @@ vows.describe('Date Validate').addBatch({
         'december': function (topic) {
             assert.equal(Date.getDaysInMonth(2011, 11), 31);
         }
-    }
+    },
+        
+    'getMonthsBetween works': {
+		topic: function() { return new Date( "Feb 28 2013" ); },
+		'different months': function( topic ) {			
+			var eDate = new Date( "Mar 30 2013" );
+			assert.equal( topic.getMonthsBetween( eDate ).toFixed( 5 ), 1.09677 );
+		},
+		'different months and years': function( topic ) {
+			var eDate = new Date( "Apr 04 2014" );
+			assert.equal( topic.getMonthsBetween( eDate ).toFixed( 5 ), 13.26236 );
+		},
+		'same month': function( topic ) {
+			var sDate = new Date( "Feb 01 2013" );
+			assert.equal( sDate.getMonthsBetween( topic ).toFixed( 5 ), 1 ); 
+		},
+		'same date': function( topic ) {
+			var sameDate = new Date( topic.getTime() );
+			assert.equal( topic.getMonthsBetween( sameDate ).toFixed( 5 ), 0.03571 );
+		},
+		'same day and month but different years': function( topic ) {
+			var differentYear = new Date( "Feb 28 2014" );
+			assert.equal( topic.getMonthsBetween( differentYear ).toFixed( 5 ), 12.03571 );	
+		}	
+	}
 
 }).export(module);
