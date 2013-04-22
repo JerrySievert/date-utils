@@ -571,17 +571,17 @@ vows.describe('Date Validate').addBatch({
     },
         
     'getMonthsBetween works': {
-		topic: function() { return new Date( "Feb 28 2013" ); },
+		topic: function() { return new Date( Date.UTC(2013, 1, 28) ); },
 		'different months': function( topic ) {			
-			var eDate = new Date( "Mar 30 2013" );
+			var eDate = new Date( Date.UTC(2013, 2, 30) );
 			assert.equal( topic.getMonthsBetween( eDate ).toFixed( 5 ), 1.09677 );
 		},
 		'different months and years': function( topic ) {
-			var eDate = new Date( "Apr 04 2014" );
+			var eDate = new Date( Date.UTC(2014, 3, 4) );
 			assert.equal( topic.getMonthsBetween( eDate ).toFixed( 5 ), 13.26236 );
 		},
 		'same month': function( topic ) {
-			var sDate = new Date( "Feb 01 2013" );
+			var sDate = new Date( Date.UTC(2013, 1, 1) );
 			assert.equal( sDate.getMonthsBetween( topic ).toFixed( 5 ), 1 ); 
 		},
 		'same date': function( topic ) {
@@ -589,7 +589,7 @@ vows.describe('Date Validate').addBatch({
 			assert.equal( topic.getMonthsBetween( sameDate ).toFixed( 5 ), 0.03571 );
 		},
 		'same day and month but different years': function( topic ) {
-			var differentYear = new Date( "Feb 28 2014" );
+			var differentYear = new Date( Date.UTC(2014, 1, 28) );
 			assert.equal( topic.getMonthsBetween( differentYear ).toFixed( 5 ), 12.03571 );	
 		}	
 	}
