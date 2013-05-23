@@ -108,6 +108,16 @@ vows.describe('Date Validate').addBatch({
         }
     },
 
+    'static equalsDay works': {
+        topic: function () { return Date.today(); },
+        'true for today': function (topic) {
+            assert.equal(Date.equalsDay(topic, Date.today()), true);
+        },
+        'false for yesterday': function (topic) {
+            assert.equal(Date.equalsDay(topic, Date.yesterday()), false);
+        },
+    },
+
     'getDayNumberFromName works': {
         topic: function () { return Date; },
         'sunday works': function (topic) {
@@ -582,6 +592,15 @@ vows.describe('Date Validate').addBatch({
         }
     },
 
+    'isToday works': {
+        topic: function () { return Date.today(); },
+        'true for today': function (topic) {
+            assert.equal(topic.isToday(), true);
+        },
+        'false if not today': function (topic) {
+            assert.equal(Date.yesterday().isToday(), false);
+        }
+    },
 
     'equals instance works': {
         topic: function () { return Date.today(); },
@@ -590,6 +609,16 @@ vows.describe('Date Validate').addBatch({
         },
         'false for not equal': function (topic) {
             assert.equal(topic.equals(Date.tomorrow()), false);
+        }
+    },
+
+    'equalsDay instance works': {
+        topic: function () { return Date.today(); },
+        'true for today': function (topic) {
+            assert.equal(topic.equalsDay(Date.today()), true);
+        },
+        'false for yesterday': function (topic) {
+            assert.equal(topic.equalsDay(Date.yesterday()), false);
         }
     },
 
