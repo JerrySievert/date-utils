@@ -317,6 +317,12 @@ vows.describe('Date Validate').addBatch({
             topic.addDays(1);
             assert.equal(topic.getDate(), 11);
         },
+        'adding positive days works across boundaries': function () {
+            var topic = new Date(2011, 0, 31);
+            topic.addDays(1);
+            assert.equal(topic.getDate(), 1);
+            assert.equal(topic.getMonth(), 1);
+        },
         'adding negative days works': function () {
             var topic = new Date(2011, 0, 10);
             topic.addDays(1);
