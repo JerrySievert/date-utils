@@ -108,6 +108,16 @@ vows.describe('Date Validate').addBatch({
         }
     },
 
+    'static equalsDay works': {
+        topic: function () { return Date.today(); },
+        'true for today': function (topic) {
+            assert.equal(Date.equalsDay(topic, Date.today()), true);
+        },
+        'false for yesterday': function (topic) {
+            assert.equal(Date.equalsDay(topic, Date.yesterday()), false);
+        },
+    },
+
     'getDayNumberFromName works': {
         topic: function () { return Date; },
         'sunday works': function (topic) {
@@ -248,6 +258,185 @@ vows.describe('Date Validate').addBatch({
         },
         'dec works': function (topic) {
             assert.equal(topic.getMonthNumberFromName('dec'), 11);
+        }
+    },
+
+    'getMonthNameFromNumber works': {
+        topic: function () { return Date; },
+        '0 works': function (topic) {
+            assert.equal(topic.getMonthNameFromNumber(0), 'January');
+        },
+        '1 works': function (topic) {
+            assert.equal(topic.getMonthNameFromNumber(1), 'February');
+        },
+        '2 works': function (topic) {
+            assert.equal(topic.getMonthNameFromNumber(2), 'March');
+        },
+        '3 works': function (topic) {
+            assert.equal(topic.getMonthNameFromNumber(3), 'April');
+        },
+        '4 works': function (topic) {
+            assert.equal(topic.getMonthNameFromNumber(4), 'May');
+        },
+        '5 works': function (topic) {
+            assert.equal(topic.getMonthNameFromNumber(5), 'June');
+        },
+        '6 works': function (topic) {
+            assert.equal(topic.getMonthNameFromNumber(6), 'July');
+        },
+        '7 works': function (topic) {
+            assert.equal(topic.getMonthNameFromNumber(7), 'August');
+        },
+        '8 works': function (topic) {
+            assert.equal(topic.getMonthNameFromNumber(8), 'September');
+        },
+        '9 works': function (topic) {
+            assert.equal(topic.getMonthNameFromNumber(9), 'October');
+        },
+        '10 works': function (topic) {
+            assert.equal(topic.getMonthNameFromNumber(10), 'November');
+        },
+        '11 works': function (topic) {
+            assert.equal(topic.getMonthNameFromNumber(11), 'December');
+        }
+    },
+
+    'getMonthAbbrFromNumber works': {
+        topic: function () { return Date; },
+        '0 works': function (topic) {
+            assert.equal(topic.getMonthAbbrFromNumber(0), 'Jan');
+        },
+        '1 works': function (topic) {
+            assert.equal(topic.getMonthAbbrFromNumber(1), 'Feb');
+        },
+        '2 works': function (topic) {
+            assert.equal(topic.getMonthAbbrFromNumber(2), 'Mar');
+        },
+        '3 works': function (topic) {
+            assert.equal(topic.getMonthAbbrFromNumber(3), 'Apr');
+        },
+        '4 works': function (topic) {
+            assert.equal(topic.getMonthAbbrFromNumber(4), 'May');
+        },
+        '5 works': function (topic) {
+            assert.equal(topic.getMonthAbbrFromNumber(5), 'Jun');
+        },
+        '6 works': function (topic) {
+            assert.equal(topic.getMonthAbbrFromNumber(6), 'Jul');
+        },
+        '7 works': function (topic) {
+            assert.equal(topic.getMonthAbbrFromNumber(7), 'Aug');
+        },
+        '8 works': function (topic) {
+            assert.equal(topic.getMonthAbbrFromNumber(8), 'Sep');
+        },
+        '9 works': function (topic) {
+            assert.equal(topic.getMonthAbbrFromNumber(9), 'Oct');
+        },
+        '10 works': function (topic) {
+            assert.equal(topic.getMonthAbbrFromNumber(10), 'Nov');
+        },
+        '11 works': function (topic) {
+            assert.equal(topic.getMonthAbbrFromNumber(11), 'Dec');
+        }
+    },
+
+    'getLastMonthName': {
+        'when it is January': {
+            topic: function () {
+                return new Date("January 15, 2010 12:00:00");
+            },
+            'returns December': function(instance) {
+                assert.equal(instance.getLastMonthName(), 'December');
+            }
+        },
+        'when it is Feburary': {
+            topic: function () {
+                return new Date("Feburary 15, 2010 12:00:00");
+            },
+            'returns January': function(instance) {
+                assert.equal(instance.getLastMonthName(), 'January');
+            }
+        },
+        'when it is March': {
+            topic: function () {
+                return new Date("March 15, 2010 12:00:00");
+            },
+            'returns February': function(instance) {
+                assert.equal(instance.getLastMonthName(), 'February');
+            }
+        },
+        'when it is April': {
+            topic: function () {
+                return new Date("April 15, 2010 12:00:00");
+            },
+            'returns March': function(instance) {
+                assert.equal(instance.getLastMonthName(), 'March');
+            }
+        },
+        'when it is May': {
+            topic: function () {
+                return new Date("May 15, 2010 12:00:00");
+            },
+            'returns April': function(instance) {
+                assert.equal(instance.getLastMonthName(), 'April');
+            }
+        },
+        'when it is June': {
+            topic: function () {
+                return new Date("June 15, 2010 12:00:00");
+            },
+            'returns May': function(instance) {
+                assert.equal(instance.getLastMonthName(), 'May');
+            }
+        },
+        'when it is July': {
+            topic: function () {
+                return new Date("July 15, 2010 12:00:00");
+            },
+            'returns June': function(instance) {
+                assert.equal(instance.getLastMonthName(), 'June');
+            }
+        },
+        'when it is August': {
+            topic: function () {
+                return new Date("August 15, 2010 12:00:00");
+            },
+            'returns July': function(instance) {
+                assert.equal(instance.getLastMonthName(), 'July');
+            }
+        },
+        'when it is September': {
+            topic: function () {
+                return new Date("September 15, 2010 12:00:00");
+            },
+            'returns August': function(instance) {
+                assert.equal(instance.getLastMonthName(), 'August');
+            }
+        },
+        'when it is October': {
+            topic: function () {
+                return new Date("October 15, 2010 12:00:00");
+            },
+            'returns September': function(instance) {
+                assert.equal(instance.getLastMonthName(), 'September');
+            }
+        },
+        'when it is November': {
+            topic: function () {
+                return new Date("November 15, 2010 12:00:00");
+            },
+            'returns October': function(instance) {
+                assert.equal(instance.getLastMonthName(), 'October');
+            }
+        },
+        'when it is December': {
+            topic: function () {
+                return new Date("December 15, 2010 12:00:00");
+            },
+            'returns November': function(instance) {
+                assert.equal(instance.getLastMonthName(), 'November');
+            }
         }
     },
 
@@ -409,6 +598,15 @@ vows.describe('Date Validate').addBatch({
         }
     },
 
+    'isToday works': {
+        topic: function () { return Date.today(); },
+        'true for today': function (topic) {
+            assert.equal(topic.isToday(), true);
+        },
+        'false if not today': function (topic) {
+            assert.equal(Date.yesterday().isToday(), false);
+        }
+    },
 
     'equals instance works': {
         topic: function () { return Date.today(); },
@@ -417,6 +615,16 @@ vows.describe('Date Validate').addBatch({
         },
         'false for not equal': function (topic) {
             assert.equal(topic.equals(Date.tomorrow()), false);
+        }
+    },
+
+    'equalsDay instance works': {
+        topic: function () { return Date.today(); },
+        'true for today': function (topic) {
+            assert.equal(topic.equalsDay(Date.today()), true);
+        },
+        'false for yesterday': function (topic) {
+            assert.equal(topic.equalsDay(Date.yesterday()), false);
         }
     },
 
