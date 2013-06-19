@@ -265,14 +265,14 @@ vows.describe('Date Validate').addBatch({
         'the first week': {
             topic: function() { return new Date(2013, 0, 1); },
             'must be 1': function(topic) {
-                assert.equal(topic.getWeekNumber(), 1);
+                assert.strictEqual(topic.getWeekNumber(), 1);
             }
         },
 
         'week 16': {
             topic: function() { return new Date(2013, 3, 15); },
             'must be 16': function(topic) {
-                assert.equal(topic.getWeekNumber(), 16);
+                assert.strictEqual(topic.getWeekNumber(), 16);
             }
         }
     },
@@ -281,14 +281,14 @@ vows.describe('Date Validate').addBatch({
         'the first week': {
             topic: function() { return new Date(2013, 0, 1); },
             'must be 1': function(topic) {
-                assert.equal(topic.getWeekNumber(), "01");
+                assert.strictEqual(topic.getFullWeekNumber(), "01");
             }
         },
 
         'week 16': {
             topic: function() { return new Date(2013, 3, 15); },
             'must be 16': function(topic) {
-                assert.equal(topic.getWeekNumber(), "16");
+                assert.strictEqual(topic.getFullWeekNumber(), "16");
             }
         }
     },
