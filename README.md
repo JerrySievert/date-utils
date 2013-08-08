@@ -38,7 +38,7 @@ Note: This did not work in the `REPL` before `Node.js 0.6` due to how `Node.js` 
     Date.getDayNumberFromName(name); // su/sun/sunday - 0, mo/mon/monday - 1, etc
     Date.getMonthNumberFromName(name); // jan/january - 0, feb/february - 1, etc
     Date.isLeapYear(year); // true/false whether the year is a leap year
-    Date.getDaysInMonth(monthNumber); // number of days in the month
+    Date.getDaysInMonth(year, monthNumber); // number of days in the month 0-11
 
 ## Instance Methods
     d.clone(); // returns a new copy of date object set to the same time
