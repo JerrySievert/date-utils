@@ -261,6 +261,38 @@ vows.describe('Date Validate').addBatch({
         }
     },
 
+    'getWeekNumber works': {
+        'the first week': {
+            topic: function() { return new Date(2013, 0, 1); },
+            'must be 1': function(topic) {
+                assert.strictEqual(topic.getWeekNumber(), 1);
+            }
+        },
+
+        'week 16': {
+            topic: function() { return new Date(2013, 3, 15); },
+            'must be 16': function(topic) {
+                assert.strictEqual(topic.getWeekNumber(), 16);
+            }
+        }
+    },
+
+    'getFullWeekNumber works': {
+        'the first week': {
+            topic: function() { return new Date(2013, 0, 1); },
+            'must be 1': function(topic) {
+                assert.strictEqual(topic.getFullWeekNumber(), "01");
+            }
+        },
+
+        'week 16': {
+            topic: function() { return new Date(2013, 3, 15); },
+            'must be 16': function(topic) {
+                assert.strictEqual(topic.getFullWeekNumber(), "16");
+            }
+        }
+    },
+
     'getMonthNameFromNumber works': {
         topic: function () { return Date; },
         '0 works': function (topic) {
