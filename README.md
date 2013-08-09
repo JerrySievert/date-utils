@@ -2,6 +2,10 @@
 
 [![Build Status](https://secure.travis-ci.org/JerrySievert/node-date-utils.png)](http://travis-ci.org/JerrySievert/node-date-utils)
 
+## NOTE
+
+Version 2 Feature and Changes discussion is being held at https://github.com/JerrySievert/node-date-utils/issues/37
+
 ## In a nutshell
 
 - Micro-Framework adding missing functionality to the Date object
