@@ -2,6 +2,10 @@
 
 [![Build Status](https://secure.travis-ci.org/JerrySievert/node-date-utils.png)](http://travis-ci.org/JerrySievert/node-date-utils)
 
+## NOTE
+
+Version 2 Feature and Changes discussion is being held at https://github.com/JerrySievert/node-date-utils/issues/37
+
 ## In a nutshell
 
 - Micro-Framework adding missing functionality to the Date object
@@ -38,7 +42,7 @@ Note: This did not work in the `REPL` before `Node.js 0.6` due to how `Node.js` 
     Date.getDayNumberFromName(name); // su/sun/sunday - 0, mo/mon/monday - 1, etc
     Date.getMonthNumberFromName(name); // jan/january - 0, feb/february - 1, etc
     Date.isLeapYear(year); // true/false whether the year is a leap year
-    Date.getDaysInMonth(monthNumber); // number of days in the month
+    Date.getDaysInMonth(year, monthNumber); // number of days in the month 0-11
 
 ## Instance Methods
     d.clone(); // returns a new copy of date object set to the same time
