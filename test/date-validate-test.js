@@ -583,6 +583,139 @@ vows.describe('Date Validate').addBatch({
         }
     },
 
+    'can add years': {
+        'adding positive years works': function () {
+            var topic = new Date(2011, 1, 10);
+            topic.addYears(1);
+            assert.equal(topic.getFullYear(), 2012);
+        },
+        'adding negative years works': function () {
+            var topic = new Date(2011, 1, 10);
+            topic.addYears(1);
+            assert.equal(topic.getFullYear(), 2012);
+            topic.addYears(-2);
+            assert.equal(topic.getFullYear(), 2010);
+        }
+    },
+
+    'cannot remove milliseconds': {
+        'removing is not implemented': function () {
+            var topic = Date.today();
+            assert.throws(function() { topic.removeMilliseconds(500) }, Error);
+        }
+    },
+
+    'can remove seconds': {
+        'removing positive seconds works': function () {
+            var topic = Date.today();
+            topic.removeSeconds(50);
+            assert.equal(topic.getSeconds(), 10);
+        },
+        'removing negative seconds works': function () {
+            var topic = Date.today();
+            topic.removeSeconds(50);
+            assert.equal(topic.getSeconds(), 10);
+            topic.removeSeconds(-25);
+            assert.equal(topic.getSeconds(), 35);
+        }
+    },
+
+    'can remove minutes': {
+        'removing positive minutes works': function () {
+            var topic = Date.today();
+            topic.removeMinutes(50);
+            assert.equal(topic.getMinutes(), 10);
+        },
+        'removing negative minutes works': function () {
+            var topic = Date.today();
+            topic.removeMinutes(50);
+            assert.equal(topic.getMinutes(), 10);
+            topic.removeMinutes(-25);
+            assert.equal(topic.getMinutes(), 35);
+        }
+    },
+
+    'can remove hours': {
+        'removing positive hours works': function () {
+            var topic = Date.today();
+            topic.removeHours(5);
+            assert.equal(topic.getHours(), 19);
+        },
+        'removing negative hours works': function () {
+            var topic = Date.today();
+            topic.removeHours(5);
+            assert.equal(topic.getHours(), 19);
+            topic.removeHours(-2);
+            assert.equal(topic.getHours(), 21);
+        }
+    },
+
+    'can remove days': {
+        'removing positive days works': function () {
+            var topic = new Date(2011, 0, 10);
+            topic.removeDays(1);
+            assert.equal(topic.getDate(), 09);
+        },
+        'removing positive days works across boundaries': function () {
+            var topic = new Date(2011, 0, 01);
+            topic.removeDays(1);
+            assert.equal(topic.getDate(), 31);
+            assert.equal(topic.getMonth(), 11);
+        },
+        'removing negative days works': function () {
+            var topic = new Date(2011, 0, 10);
+            topic.removeDays(1);
+            assert.equal(topic.getDate(), 09);
+            topic.removeDays(-2);
+            assert.equal(topic.getDate(), 11);
+        }
+    },
+
+    'can remove weeks': {
+        'removing positive weeks works': function () {
+            var topic = new Date(2011, 0, 10);
+            topic.removeWeeks(1);
+            assert.equal(topic.getDate(), 03);
+        },
+        'removing negative weeks works': function () {
+            var topic = new Date(2011, 0, 10);
+            topic.removeWeeks(1);
+            assert.equal(topic.getDate(), 03);
+            topic.removeWeeks(-2);
+            assert.equal(topic.getDate(), 17);
+        }
+    },
+
+    'can remove months': {
+        'removing positive months works': function () {
+            var topic = new Date(2011, 1, 10);
+            topic.removeMonths(1);
+            assert.equal(topic.getMonth(), 0);
+        },
+        'removing negative months works': function () {
+            var topic = new Date(2011, 1, 10);
+            topic.removeMonths(1);
+            assert.equal(topic.getMonth(), 0);
+            topic.removeMonths(-2);
+            assert.equal(topic.getMonth(), 2);
+        }
+    },
+
+    'can remove years': {
+        'removing positive years works': function () {
+            var topic = new Date(2011, 1, 10);
+            topic.removeYears(1);
+            assert.equal(topic.getFullYear(), 2010);
+        },
+        'removing negative years works': function () {
+            var topic = new Date(2011, 1, 10);
+            topic.removeYears(1);
+            assert.equal(topic.getFullYear(), 2010);
+            topic.removeYears(-2);
+            assert.equal(topic.getFullYear(), 2012);
+        }
+    },
+
     'can set time to now': {
         'setting time to now works': function () {
             var topic = Date.today();
@@ -815,10 +948,10 @@ vows.describe('Date Validate').addBatch({
             assert.equal(Date.getDaysInMonth(2011, 11), 31);
         }
     },
-        
+
     'getMonthsBetween works': {
 		topic: function() { return new Date( Date.UTC(2013, 1, 28) ); },
-		'different months': function( topic ) {			
+		'different months': function( topic ) {
 			var eDate = new Date( Date.UTC(2013, 2, 30) );
 			assert.equal( topic.getMonthsBetween( eDate ).toFixed( 5 ), 1.09677 );
 		},
@@ -828,7 +961,7 @@ vows.describe('Date Validate').addBatch({
 		},
 		'same month': function( topic ) {
 			var sDate = new Date( Date.UTC(2013, 1, 1) );
-			assert.equal( sDate.getMonthsBetween( topic ).toFixed( 5 ), 1 ); 
+			assert.equal( sDate.getMonthsBetween( topic ).toFixed( 5 ), 1 );
 		},
 		'same date': function( topic ) {
 			var sameDate = new Date( topic.getTime() );
@@ -836,8 +969,8 @@ vows.describe('Date Validate').addBatch({
 		},
 		'same day and month but different years': function( topic ) {
 			var differentYear = new Date( Date.UTC(2014, 1, 28) );
-			assert.equal( topic.getMonthsBetween( differentYear ).toFixed( 5 ), 12.03571 );	
-		}	
+			assert.equal( topic.getMonthsBetween( differentYear ).toFixed( 5 ), 12.03571 );
+		}
 	}
 
 }).export(module);
