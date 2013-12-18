@@ -713,7 +713,8 @@ vows.describe('Date Validate').addBatch({
             assert.equal(topic.getFullYear(), 2010);
             topic.removeYears(-2);
             assert.equal(topic.getFullYear(), 2012);
-
+        }
+    },
     'can add weekdays within a week': {
         'adding positive weekdays': function () {
             var topic = new Date(2013, 1, 13); //Wed
