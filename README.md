@@ -99,4 +99,8 @@ Note: This did not work in the `REPL` before `Node.js 0.6` due to how `Node.js` 
     d.addMonths(number); // add months to existing time
     d.addYears(number); // add years to existing time
 
+    d.remove(...); // same idea as for add
+    d.removeMilliseconds(number); // ...
+    // same API, just remove instead
+
     
