@@ -99,4 +99,10 @@ Note: This did not work in the `REPL` before `Node.js 0.6` due to how `Node.js` 
     d.addMonths(number); // add months to existing time
     d.addYears(number); // add years to existing time
 
-    
+    d.remove(...); // same idea as for add
+    d.removeMilliseconds(number); // ...
+    // same API, just remove instead
+
+## Development
+
+Make sure you have [gulp](https://www.npmjs.org/package/gulp) installed (npm install gulp -g). After that hit `npm install` to get the dependencies. Finally, hit `gulp`. This will build the library initially. If you make changes to the library, it will compile the minified version automatically.
