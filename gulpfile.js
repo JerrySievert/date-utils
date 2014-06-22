@@ -1,6 +1,8 @@
 var gulp = require('gulp');
 var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
+var jsdoc = require("gulp-jsdoc");
+
 
 
 var paths = {
@@ -14,8 +16,13 @@ gulp.task('build', function() {
         pipe(gulp.dest('lib'));
 });
 
-gulp.task('watch', function() {
-    gulp.watch(paths.scripts, ['build']);
+gulp.task('docs', function() {
+    return gulp.src(paths.scripts).
+        pipe(jsdoc('./doc'));
 });
 
-gulp.task('default', ['build', 'watch']);
+gulp.task('watch', function() {
+    gulp.watch(paths.scripts, ['build', 'docs']);
+});
+
+gulp.task('default', ['build', 'docs', 'watch']);

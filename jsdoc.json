@@ -1,0 +1,28 @@
+{
+  "tags"      : {
+    "allowUnknownTags" : true
+  },
+  "plugins"   : ["plugins/markdown"],
+  "templates" : {
+    "path"            : "ink-docstrap",
+    "cleverLinks"     : false,
+    "monospaceLinks"  : false,
+    "default"         : {
+      "outputSourceFiles" : true
+    },
+    "footer"          : "",
+    "navType"         : "inline",
+    "theme"           : "readable",
+    "linenums"        : false,
+    "collapseSymbols" : false,
+    "inverseNav"      : false
+  },
+  "markdown"  : {
+    "parser"   : "gfm",
+    "hardwrap" : true
+  },
+  "opts" : {
+    "version": false,
+    "verbose": true
+  }
+}

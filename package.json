@@ -34,7 +34,8 @@
     "gulp": "^3.7.0",
     "gulp-rename": "^1.2.0",
     "gulp-uglify": "^0.3.0",
-    "vows": ">=0.7.0"
+    "vows": ">=0.7.0",
+    "gulp-jsdoc": "^0.1.4"
   },
   "scripts": {
     "test": "vows --spec"
