@@ -1,7 +1,8 @@
 var gulp = require('gulp');
 var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
-var jsdoc = require("gulp-jsdoc");
+var jsdoc = require('gulp-jsdoc');
+var complexity = require('gulp-complexity');
 
 
 
@@ -21,8 +22,13 @@ gulp.task('docs', function() {
         pipe(jsdoc('./doc'));
 });
 
-gulp.task('watch', function() {
-    gulp.watch(paths.scripts, ['build', 'docs']);
+gulp.task('complexity', function() {
+    return gulp.src(paths.scripts).
+        pipe(complexity());
 });
 
-gulp.task('default', ['build', 'docs', 'watch']);
+gulp.task('watch', function() {
+    gulp.watch(paths.scripts, ['build', 'docs', 'complexity']);
+});
+
+gulp.task('default', ['build', 'docs', 'complexity', 'watch']);
