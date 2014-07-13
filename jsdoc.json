@@ -3,20 +3,19 @@
     "allowUnknownTags" : true
   },
   "plugins"   : ["plugins/markdown"],
-  "templates" : {
-    "path"            : "ink-docstrap",
-    "cleverLinks"     : false,
-    "monospaceLinks"  : false,
-    "default"         : {
-      "outputSourcePath" : true,
-      "outputSourceFiles": true
-    },
-    "footer"          : "",
-    "navType"         : "inline",
-    "theme"           : "readable",
-    "linenums"        : false,
-    "collapseSymbols" : false,
-    "inverseNav"      : false
+  "templates": {
+      "cleverLinks": false,
+      "monospaceLinks": false,
+      "default": {
+          "outputSourceFiles": true
+      },
+      "systemName"      : "Date-Utils",
+      "footer"          : "",
+      "navType"         : "vertical",
+      "theme"           : "journal",
+      "linenums"        : true,
+      "collapseSymbols" : false,
+      "inverseNav"      : true
   },
   "markdown"  : {
     "parser"   : "gfm",
