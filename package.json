@@ -35,8 +35,10 @@
     "gulp-rename": "^1.2.0",
     "gulp-uglify": "^0.3.0",
     "vows": ">=0.7.0",
-    "gulp-jsdoc": "^0.1.4",
-    "gulp-complexity": "^0.2.1"
+    "gulp-complexity": "^0.2.1",
+    "gulp-shell": "^0.2.8",
+    "jsdoc": "^3.3.0-alpha9",
+    "ink-docstrap": "^0.4.12"
   },
   "scripts": {
     "test": "vows --spec"

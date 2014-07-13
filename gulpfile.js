@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
-var jsdoc = require('gulp-jsdoc');
+var shell = require('gulp-shell');
 var complexity = require('gulp-complexity');
 
 
@@ -17,10 +17,9 @@ gulp.task('build', function() {
         pipe(gulp.dest('lib'));
 });
 
-gulp.task('docs', function() {
-    return gulp.src(paths.scripts).
-        pipe(jsdoc('./doc'));
-});
+gulp.task('docs', shell.task([
+  './node_modules/jsdoc/jsdoc.js -c jsdoc.json -d doc -t ./node_modules/ink-docstrap/template README.md lib/date-utils.js'
+]));
 
 gulp.task('complexity', function() {
     return gulp.src(paths.scripts).
