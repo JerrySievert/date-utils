@@ -9,7 +9,7 @@
     "time"
   ],
   "author": "Jerry Sievert <code@legitimatesounding.com> (http://legitimatesounding.com/blog/)",
-  "homepage": "http://github.com/JerrySievert/node-date-utils/",
+  "homepage": "https://jerrysievert.github.io/date-utils/",
   "contributors": [
     {
       "name": "Jerry Sievert",
@@ -21,10 +21,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "http://github.com/JerrySievert/node-date-utils.git"
+    "url": "http://github.com/JerrySievert/date-utils.git"
   },
   "bugs": {
-    "url": "http://github.com/JerrySievert/node-date-utils/issues"
+    "url": "http://github.com/JerrySievert/date-utils/issues"
   },
   "directories": {
     "lib": "./lib",
