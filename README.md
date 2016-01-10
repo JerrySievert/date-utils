@@ -23,6 +23,14 @@ Version 2 Feature and Changes discussion is being held at https://github.com/Jer
 
 Note: This did not work in the `REPL` before `Node.js 0.6` due to how `Node.js` handles context in the `REPL`.
 
+## Change Language
+    require('date-utils').language("es")
+
+Support languajes
+
+- Spanish - "es"
+- French - "fr"
+
 ## Documentation
 
 Documentation (nearing completion) can be found at https://jerrysievert.github.io/date-utils
