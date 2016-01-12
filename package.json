@@ -39,7 +39,7 @@
     "ink-docstrap": "^0.4.12"
   },
   "scripts": {
-    "test": "vows --spec"
+    "test": "vows -i --spec"
   },
   "engines": {
     "node": ">0.4.0"
