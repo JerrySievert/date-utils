@@ -23,10 +23,10 @@ Version 2 Feature and Changes discussion is being held at https://github.com/Jer
 
 Note: This did not work in the `REPL` before `Node.js 0.6` due to how `Node.js` handles context in the `REPL`.
 
-## Change Language
+## Changing Languages
     require('date-utils').language("es")
 
-Support languajes
+Supported languages:
 
 - Spanish - "es"
 - French - "fr"
@@ -38,3 +38,15 @@ Documentation (nearing completion) can be found at https://jerrysievert.github.i
 ## Development
 
 Make sure you have [gulp](https://www.npmjs.org/package/gulp) installed (npm install gulp -g). After that hit `npm install` to get the dependencies. Finally, hit `gulp`. This will build the library initially. If you make changes to the library, it will compile the minified version automatically.
+
+### Testing
+
+```
+$ npm test
+```
+
+### Complexity and Minification
+
+```
+$ gulp
+```
