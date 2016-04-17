@@ -30,6 +30,7 @@ Supported languages:
 
 - Spanish - "es"
 - French - "fr"
+- Portuguese Brazilian - "pt-BR"
 
 ## Documentation
 
