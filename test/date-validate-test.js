@@ -1040,15 +1040,15 @@ vows.describe('Date Validate').addBatch({
       topic: function() { return new Date(Date.UTC(2013, 1, 28)); },
       'different months': function(topic) {
         var eDate = new Date(Date.UTC(2013, 2, 30));
-        assert.equal(topic.getMonthsBetween(eDate).toFixed(2), 1.06);
+        assert.equal(topic.getMonthsBetween(eDate).toFixed(0), 1);
       },
       'different months and years': function(topic) {
         var eDate = new Date(Date.UTC(2014, 3, 4));
-        assert.equal(topic.getMonthsBetween(eDate).toFixed(2), 13.22);
+        assert.equal(topic.getMonthsBetween(eDate).toFixed(0), 13);
       },
       'same month': function( topic ) {
         var sDate = new Date(Date.UTC(2013, 1, 1));
-        assert.equal(sDate.getMonthsBetween(topic).toFixed(2), 0.87);
+        assert.equal(sDate.getMonthsBetween(topic).toFixed(0), 0);
       },
       'same date': function(topic) {
         var sameDate = new Date(topic.getTime());
