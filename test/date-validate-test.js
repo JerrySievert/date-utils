@@ -1048,7 +1048,7 @@ vows.describe('Date Validate').addBatch({
       },
       'same month': function( topic ) {
         var sDate = new Date(Date.UTC(2013, 1, 1));
-        assert.equal(sDate.getMonthsBetween(topic).toFixed(0), 0);
+        assert.equal(sDate.getMonthsBetween(topic).toFixed(0), 1);
       },
       'same date': function(topic) {
         var sameDate = new Date(topic.getTime());
