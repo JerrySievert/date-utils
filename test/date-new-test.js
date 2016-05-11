@@ -38,6 +38,32 @@ vows.describe('Date New').addBatch({
         }
     },
 
+    'toEndOfDay() works': {
+        topic: function() { return new Date().toEndOfDay(); },
+        'returns the correct value': function (date) {
+            var compare = new Date();
+            compare.setHours(23);
+            compare.setMinutes(59);
+            compare.setSeconds(59);
+            compare.setMilliseconds(999);
+
+            assert.equal(date.valueOf(), compare.valueOf());
+        }
+    },
+
+    'toEndOfUTCDay() works': {
+        topic: function() { return new Date().toEndOfUTCDay(); },
+        'returns the correct value': function (date) {
+            var compare = new Date();
+            compare.setUTCHours(23);
+            compare.setUTCMinutes(59);
+            compare.setUTCSeconds(59);
+            compare.setUTCMilliseconds(999);
+
+            assert.equal(date.valueOf(), compare.valueOf());
+        }
+    },
+
     'today() works': {
         topic: function() {
             return Date.today();

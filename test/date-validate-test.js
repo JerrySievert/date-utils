@@ -4,6 +4,25 @@ var assert = require('assert');
 require('../lib/date-utils.js');
 
 vows.describe('Date Validate').addBatch({
+    'can validate date object': {
+        'return false for invalid date': function () {
+            var invalidDate = new Date('this is invalid date string');
+            assert.equal(Date.isValid(invalidDate), false);
+            assert.equal(invalidDate.isValid(), false);
+        },
+        'return false for invalid date again': function () {
+            var invalidDate = new Date();
+            invalidDate.setDate( 'this is invalid day number' );
+            assert.equal(Date.isValid(invalidDate), false);
+            assert.equal(invalidDate.isValid(), false);
+        },
+        'return true for valid date': function () {
+            var correctDate = new Date;
+            assert.equal( Date.isValid(correctDate), true );
+            assert.equal( correctDate.isValid(), true );
+        }
+    },
+
     'can deal with hours': {
         topic: function () { return Date; },
         'false for less than 0': function (topic) {
