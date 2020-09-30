@@ -2,11 +2,11 @@
 
 [![Build Status](https://secure.travis-ci.org/JerrySievert/date-utils.png)](http://travis-ci.org/JerrySievert/date-utils)
 
-## NOTE
+##  NOTE:
 
 Version 2 Feature and Changes discussion is being held at https://github.com/JerrySievert/node-date-utils/issues/37
 
-## In a nutshell
+## In a nutshell:
 
 - Micro-Framework adding missing functionality to the Date object
 - Useable as a polyfill in the browser
@@ -16,7 +16,7 @@ Version 2 Feature and Changes discussion is being held at https://github.com/Jer
 ## Using within a Browser
     <script type="text/javascript" src="date-utils.min.js"></script>
 
-## Using with Node.js
+## Using Node.js
     $ npm install date-utils
 
     require('date-utils');
