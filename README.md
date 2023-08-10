@@ -1,7 +1,5 @@
 # Date-Utils: Polyfills for the Date object
 
-[![Build Status](https://secure.travis-ci.org/JerrySievert/date-utils.png)](http://travis-ci.org/JerrySievert/date-utils)
-
 ## NOTE
 
 Version 2 Feature and Changes discussion is being held at https://github.com/JerrySievert/node-date-utils/issues/37
