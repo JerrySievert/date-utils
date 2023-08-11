@@ -28,6 +28,7 @@ Supported languages:
 
 - Spanish - "es"
 - French - "fr"
+- Italian - "it"
 - Portuguese Brazilian - "pt-BR"
 
 ## Documentation
