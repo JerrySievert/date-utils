@@ -29,6 +29,7 @@ Supported languages:
 - Spanish - "es"
 - French - "fr"
 - Portuguese Brazilian - "pt-BR"
+- Russian - "ru"
 
 ## Documentation
 
